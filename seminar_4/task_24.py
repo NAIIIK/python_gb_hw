@@ -12,21 +12,17 @@
 # Напишите программу для нахождения максимального числа ягод, которое может собрать за один
 # заход собирающий модуль, находясь перед некоторым кустом заданной во входном файле грядки.
 
-n = int(input())
+import random
 
-lst = [int(input()) for i in range(n)]
+n = int(input('Введите кол-во кустов: '))
 
-max_sum = 0
+lst = [random.randint(1, 10) for i in range(n)]
+# lst = [int(input(f'Введите кол-во ягод на {i + 1}-м кусте: ')) for i in range (n)]
+print(*lst)
+
+sum_lst = []
 
 for i in range(len(lst)):
-    if i == 0:
-        if lst[len(lst) - 1] + lst[i] + lst[i+1] > max_sum:
-            max_sum = lst[len(lst) - 1] + lst[i] + lst[i+1]   
-    elif i == len(lst) - 1:
-        if lst[i - 1] + lst[i] + lst[0] > max_sum:
-            max_sum = lst[i - 1] + lst[i] + lst[0]
-    else:
-        if lst[i-1] + lst[i] + lst[i+1] > max_sum:
-            max_sum = lst[i-1] + lst[i] + lst[i+1]
+       sum_lst.append(lst[i-2] + lst[i-1] + lst[i])
 
-print(max_sum)
+print(max(sum_lst))
