@@ -5,18 +5,18 @@
 # множества. m — кол-во элементов второго множества. Затем пользователь вводит
 # сами элементы множеств.
 
-import random
+# import random
 
 n = int(input('Введите кол-во элементов первого множества: '))
-lst_1 = [random.randint(-10, 10) for i in range(n)]
-print(lst_1)
-# lst_1 = [int(input(f'Введите {i+1}-й элемент первого множества: ')) for i in range(n)]
+lst_1 = [int(input(f'Введите {i+1}-й элемент первого множества: ')) for i in range(n)]
+# lst_1 = [random.randint(-10, 10) for i in range(n)]
+# print(lst_1)
 
 
 m = int(input('Введите кол-во элементов второго множества: '))
-lst_2 = [random.randint(-10, 10) for i in range(m)]
-print(lst_2)
-# lst_2 = [int(input(f'Введите {i+1}-й элемент второго множества: ')) for i in range(m)]
+lst_2 = [int(input(f'Введите {i+1}-й элемент второго множества: ')) for i in range(m)]
+# lst_2 = [random.randint(-10, 10) for i in range(m)]
+# print(lst_2)
 
 res_lst = [i for i in lst_1 if i in lst_2]
 
